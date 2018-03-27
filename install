@@ -5,8 +5,12 @@ set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 plugin-install() {
   pull-docker-image() {
     declare IMAGE="$1"
-    if [[ "$(docker images -q "${IMAGE}" 2> /dev/null)" == "" ]]; then
-      docker pull "${IMAGE}"
+    if [[ -z $DOKKU_DOCKERFILE ]]; then
+      if [[ "$(docker images -q "${IMAGE}" 2> /dev/null)" == "" ]]; then
+        docker pull "${IMAGE}"
+      fi
+    else
+      echo Please make sure the \""${IMAGE}"\" Docker image is installed.
     fi
   }
 

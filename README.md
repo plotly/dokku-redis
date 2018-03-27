@@ -221,3 +221,10 @@ dokku redis:backup-auth lolipop AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY AWS_REGI
 # more specific example for minio auth
 dokku redis:backup-auth lolipop MINIO_ACCESS_KEY_ID MINIO_SECRET_ACCESS_KEY us-east-1 s3v4 https://YOURMINIOSERVICE
 ```
+
+## Installation from inside a Dockerfile
+
+As with Dokku itself, set `DOKKU_DOCKERFILE=true` during installation. This
+disables image pulls, so you'll need to make sure the host that will run
+this plugin has the needed Docker images installed. This list is printed during
+installation, or you can check the [install command](https://github.com/dokku/dokku-redis/blob/master/install).
