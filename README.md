@@ -2,6 +2,12 @@
 
 Official redis plugin for dokku. Currently defaults to installing [redis 5.0.5](https://hub.docker.com/_/redis/).
 
+<div align="center">
+  <a href="https://dash.plotly.com/project-maintenance">
+    <img src="https://dash.plotly.com/assets/images/maintained-by-plotly.png" width="600px" alt="Maintained by Plotly">
+  </a>
+</div>
+
 ## requirements
 
 - dokku 0.12.x+
